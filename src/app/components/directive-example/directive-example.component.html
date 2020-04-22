@@ -1,0 +1,10 @@
+<p appHighlight >Click Here to highlight the text !</p>
+<hr>
+<h4>Pick a highlight color</h4>
+<div class="pt-3">
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHighlight]='color' class="mt-3">Hover here to highlight . This is to demonstrate highlighted Text.</p> 
+

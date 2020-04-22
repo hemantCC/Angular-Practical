@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 mt-5">
+        <!-- Actual Content -->
+        <h3>Built-in Pipes</h3>
+        <p>
+            <strong>No Pipe: </strong> <span>{{ CarName }}</span>
+        </p>
+        <p>
+            <strong>Uppsercase : </strong> <span>{{ CarName | uppercase}}</span>
+        </p>
+        <p>
+            <strong>Lowercase : </strong> <span>{{ CarName | lowercase}}</span>
+        </p>
+        <p>
+            <strong>TitleCase : </strong> <span>{{ CarName | titlecase}}</span>
+        </p>
+        <p>
+            <strong>Percentage : </strong> <span>TurboBoost - {{ TurboBoost | percent }}</span>
+        </p>
+        <p>
+            <strong>Currency : </strong> <span>Price - {{ Price | currency:'INR'}}</span>
+        </p>
+        <p>
+            <strong>Slice : </strong> <span>{{ CarName | slice:11:17}}</span>
+        </p>
+        <p>
+            <strong>JSON : </strong> <span>{{ AllCars | json}}</span>
+        </p>
+        <hr>
+
+
+        <h3>Chaning Pipes</h3>
+        <p>{{ DateOfJoining |  date | uppercase }}</p>
+        <hr>
+
+
+        <h3>Parameterized Pipes</h3>
+        <p>
+            <button class="btn btn-primary" (click)="toggleFormat()">Toggle Format</button>
+            <strong class="ml-3">Date of joining is : </strong> {{ DateOfJoining | date:format}}
+        </p>
+        <p>
+            <strong>number:'1.2-3' : </strong> <span>{{ 9.137 | number:'1.2-3'}}</span>
+        </p>
+        <p>
+            <strong>number:'3.4-5' : </strong> <span>{{ 9.137 | number:'3.4-5'}}</span>
+        </p>
+        <p>
+            <strong>number:'3.1-2' : </strong> <span>{{ 9.137 | number:'3.1-2'}}</span>
+        </p>
+        <hr>
+
+
+        <h3 class="mb-3">Custome Pipes</h3>
+        <strong>Power Booster : </strong>
+        <p><b>2^10 : </b> {{2 | exponentialStrength: 10}}</p>
+
+        <strong>Super Power Booster</strong>
+        <div>Normal power: <input [(ngModel)]="power" class="form-control"></div>
+        <div>Boost factor: <input [(ngModel)]="factor" class="form-control"></div>
+        <p class="b1 mt-2">
+            Super Hero Power: {{power | exponentialStrength: factor}}
+        </p>
+
+        <hr>
+        <h3 class="mb-3">Flying Heroes [Pure Pipe]</h3>
+        <b>Add New Hero: </b>
+        <input type="text" #box (keyup.enter)="addHero(box.value); box.value=''" placeholder="hero name">
+        <button (click)="reset()" class="btn btn-warning ml-3">Reset</button>
+        <div>
+            <input type="checkbox" [(ngModel)]="canFly"> can fly
+            <input type="checkbox" [(ngModel)]="mutate">Mutate array
+        </div>
+
+        <h4>All Heroes</h4>
+        <div *ngFor="let hero of heroes ">
+            {{ hero.name }}
+        </div>
+        <h4>Heroes who Fly ( Piped )</h4>
+        <div *ngFor="let hero of (heroes | flyingHeroes)">
+            {{hero.name}}
+        </div>
+
+        <app-flying-hero-impure></app-flying-hero-impure>
+        <hr>
+
+
+
+    </div>
+
+    <div class="col-md-3"></div>
+
+</div>

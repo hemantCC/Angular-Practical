@@ -1,0 +1,63 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 11",
+      "description": "6.1-inch Liquid Retina HD LCD display. Water and dust resistant (2 meters for up to 30 minutes, IP68).",
+      "price": 80000,
+      "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1567022175704"
+    },
+    {
+      "id": 2,
+      "name": "JBL Flip 5",
+      "description": "JBL Flip 5 20 W IPX7 Waterproof Bluetooth Speaker with PartyBoost (Without Mic, Blue).",
+      "price": 80000,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81cV0p6-2sL._SL1500_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Levi's Jeans",
+      "description": "The 512™ Slim Taper Fit Jean has a slimmer leg than the Levi's® 511™ and has a tailor-inspired cut. ",
+      "price": 3000,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/91rjjiPWzJL._UL1500_.jpg"
+    },
+    {
+      "id": 4,
+      "name": "New Apple MacBook Pro",
+      "description": "(16-inch, 16GB RAM, 1TB Storage, 2.3GHz Intel Core i9) - Space Grey.Ninth-generation 8-core Intel Core i9 processor Stunning 16-inch Retina display with True Tone technology Touch Bar and Touch ID",
+      "price": 140000,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71L2iBSyyOL._SL1500_.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Casio G-Shock",
+      "description": "This is Casio G-Shock Analog-Digital Black Dial Men's Watch - GA-110-1BDR (G317)4",
+      "price": 9000,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61z%2BfTq6lGL._UL1100_.jpg"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+
+  "cart" : [
+
+    
+  ],
+
+
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
