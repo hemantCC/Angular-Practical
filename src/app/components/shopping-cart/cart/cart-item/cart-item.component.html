@@ -1,1 +1,6 @@
-<span>{{ cartItem.productName}} </span> x <span>{{ cartItem.qty }}</span> = <strong> {{cartItem.price * cartItem.qty | currency:'INR'}}</strong>
+<span>{{ cartItem.productName}} </span> x <span>{{ cartItem.qty }}</span>
+= <strong> {{cartItem.price * cartItem.qty | currency:'INR'}}</strong>
+
+<button class="btn btn-danger float-right" (click)="deleteCartItem(cartItem.id)">
+    <i class="fa fa-trash-o" style="font-size:20px"></i>
+</button>

@@ -4,7 +4,7 @@ import { CartItem } from '../models/cart-item';
 import { HttpClient } from '@angular/common/http';
 import { cartUrl } from '../config/api';
 import { Product } from 'src/app/models/product';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,8 @@ export class CartService {
   constructor(private http: HttpClient) { }
 
   getCartItem():Observable<CartItem[]>{
-    //TODO: Mapping the obtained result to cartItem model properties ( pipe() and Map())
+    
+    //TODO: Mapping the obtained result to cartItem model properties( pipe() and Map())
     return this.http.get<CartItem[]>(cartUrl).pipe(
       map((result:any[])=>{
         let cartItems :CartItem[] = [];
@@ -41,5 +42,11 @@ export class CartService {
 
   addProductToCart(product:Product):Observable<any>{
     return this.http.post(cartUrl , { product });
+  }
+
+  deleteCartItem(id:number):Observable<any>{
+    console.log('id');
+    console.log(id);
+    return this.http.delete<any>(`${cartUrl}/${id}`);
   }
 }

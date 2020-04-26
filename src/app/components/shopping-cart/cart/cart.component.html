@@ -1,22 +1,9 @@
-<h3>Your Cart</h3>
+<h3 class="text-center"> <i class="fa fa-shopping-cart mr-3" style="font-size:36px;color: blue;"></i>Your Cart</h3>
 <div *ngIf="cartItems.length === 0" class="alert alert-info">Cart is Empty </div>
 
 <ul class="list-group" *ngIf="cartItems.length > 0">
     <li class="list-group-item" *ngFor="let item of cartItems">
-    <app-cart-item [cartItem]="item"></app-cart-item>    
+        <app-cart-item [cartItem]="item"></app-cart-item>
     </li>
     <li class="list-group-item active">Total - {{ cartTotal | currency:'INR'}} </li>
 </ul>
-
-<!-- <button 
-    *ngIf="cartItems.length > 0" 
-    class="btn btn-primary mt-2"
-    (click)="EmptyCart()">
-     Empty Cart
-</button> -->
-
-
-
-
-
-

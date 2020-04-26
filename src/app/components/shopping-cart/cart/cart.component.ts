@@ -43,4 +43,5 @@ export class CartComponent implements OnInit {
       this.cartTotal += (item.price * item.qty)
     })
   }
+
 }

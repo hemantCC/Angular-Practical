@@ -10,6 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductItemComponent implements OnInit {
 
+  
   @Input() productItem : Product
   constructor(
     private msg: MessangerService,
@@ -22,6 +23,7 @@ export class ProductItemComponent implements OnInit {
   handleAddToCart(){
     this.cartService.addProductToCart(this.productItem).subscribe(()=>
     this.msg.sendMsg(this.productItem))
+    window.alert('Your product has been added to the cart!')
   }
 
 }

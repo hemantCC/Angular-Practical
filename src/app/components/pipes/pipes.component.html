@@ -3,6 +3,8 @@
 
     <div class="col-md-6 mt-5">
         <!-- Actual Content -->
+
+        <!-- Built-in Pipes -->
         <h3>Built-in Pipes</h3>
         <p>
             <strong>No Pipe: </strong> <span>{{ CarName }}</span>
@@ -31,11 +33,17 @@
         <hr>
 
 
+
+
+        <!-- Chaining Pipes Example -->
         <h3>Chaning Pipes</h3>
         <p>{{ DateOfJoining |  date | uppercase }}</p>
         <hr>
 
 
+
+
+        <!-- Parameterized Pipe Example -->
         <h3>Parameterized Pipes</h3>
         <p>
             <button class="btn btn-primary" (click)="toggleFormat()">Toggle Format</button>
@@ -53,6 +61,8 @@
         <hr>
 
 
+
+        <!-- Custome Pipes -->
         <h3 class="mb-3">Custome Pipes</h3>
         <strong>Power Booster : </strong>
         <p><b>2^10 : </b> {{2 | exponentialStrength: 10}}</p>
@@ -63,8 +73,11 @@
         <p class="b1 mt-2">
             Super Hero Power: {{power | exponentialStrength: factor}}
         </p>
-
         <hr>
+
+
+
+        <!-- Flying Hero Example using PURE pipe -->
         <h3 class="mb-3">Flying Heroes [Pure Pipe]</h3>
         <b>Add New Hero: </b>
         <input type="text" #box (keyup.enter)="addHero(box.value); box.value=''" placeholder="hero name">
@@ -83,10 +96,11 @@
             {{hero.name}}
         </div>
 
+
+
+        <!-- Flying Hero Example using IMPURE pipe -->
         <app-flying-hero-impure></app-flying-hero-impure>
         <hr>
-
-
 
     </div>
 

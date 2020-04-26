@@ -1,10 +1,50 @@
+<div class="r1 p-4">
+<!-- Directive Example -->
 <p appHighlight >Click Here to highlight the text !</p>
 <hr>
 <h4>Pick a highlight color</h4>
 <div class="pt-3">
-    <input type="radio" name="colors" (click)="color='lightgreen'">Green
-    <input type="radio" name="colors" (click)="color='yellow'">Yellow
-    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+    <input type="radio" name="colors" (click)="color='lightgreen'">  Green
+    <input type="radio" name="colors" (click)="color='yellow'">  Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">  Cyan
 </div>
 <p [appHighlight]='color' class="mt-3">Hover here to highlight . This is to demonstrate highlighted Text.</p> 
 
+<hr>
+<h4>String Interpolation and Data Binding Example </h4>
+
+<button class="btn btn-primary" [disabled]="AllowNewServer">Add</button>
+Disabled : <span [innerText]="AllowNewServer"> </span>
+<div class="alert alert-warning mt-2">Note : Button gets enabled after 2 seconds of loading  </div>
+
+
+<hr>
+<h4>Inbuilt Attribute Directive(ngStyle)</h4>
+<p [ngStyle]="{backgroundColor : getColor()}"
+   [ngClass]="{online: serverStatus === 'Online'}">
+   {{ 'Server' }} with server Id {{ serverId }} is {{ getServerStatus() }}
+</p>
+
+<hr>
+<h4>Inbuilt Structural directive</h4>
+
+<button class="btn btn-success" (click)="onCreateServer()">Create Server</button>
+<button class="btn btn-warning ml-4" (click)="onDestroyServer()">Distroy Server</button>
+<!-- Use of inbuilt directive and marker for else condition -->
+<h5 *ngIf="message; else noServer">{{ ServerCreated }}</h5>
+<!-- Alternative for else condition
+<h4 *ngIf="!message">{{ ServerCreated }}</h4> -->
+<ng-template #noServer>
+    <p>No server is created!</p>
+</ng-template>
+
+<hr>
+<h4>Event Binding</h4>
+<button class="btn btn-secondary" (click)="toggleContent()">Toggle Message</button>
+<b class="ml-4" [hidden]="toggle">This is a secret Message</b>
+
+<hr>
+<h4>Two way Binding</h4>
+<input type="text" [(ngModel)]="Name" placeholder="Enter Name">
+<b class="ml-4">{{ Name }}</b>
+</div>
