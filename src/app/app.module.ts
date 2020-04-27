@@ -23,6 +23,7 @@ import { FlyingHeroesImpurePipe } from 'src/app/pipes/flying-heroes-impure.pipe'
 import { FlyingHeroImpureComponent } from './components/pipes/flying-hero-impure/flying-hero-impure.component';
 import { LoginComponent } from './components/account/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AboutComponent } from './components/about/about.component';
 
 
 
@@ -31,7 +32,8 @@ const appRoutes : Routes = [
   { path: 'shopping-cart' , canActivate:[AuthGuard], component: ShoppingCartComponent},
   { path: 'app-pipes' , canActivate:[AuthGuard], component: PipesComponent},
   { path: 'directive-example' , canActivate:[AuthGuard], component: DirectiveExampleComponent},
-  { path:  'login' , component: LoginComponent}
+  { path:  'login' , component: LoginComponent},
+  { path:  '' , component: AboutComponent}
 
 ];
 
@@ -54,6 +56,7 @@ const appRoutes : Routes = [
     FlyingHeroesImpurePipe,
     FlyingHeroImpureComponent,
     LoginComponent,
+    AboutComponent,
     
   ],
   imports: [

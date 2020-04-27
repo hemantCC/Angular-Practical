@@ -1,12 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Angular Demo</a>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Angular Demo</a>
     <div class="navbar-nav">
       <a class="nav-item nav-link" routerLink="/shopping-cart" routerLinkActive="active">Shopping Cart </a>
       <a class="nav-item nav-link" routerLink="/directive-example" routerLinkActive="active">Directives</a>
-      <a class="nav-item nav-link" routerLink="/app-pipes" routerLinkActive="active" >Pipes</a>
-      <a class="nav-item nav-link" routerLink="/login" [hidden]="!hideLogout()"
-      routerLinkActive="active" >Login</a>
-      <a class="nav-item nav-link" routerLink="/login" [hidden]="hideLogout()"  
-      (click)="logout()">Log out</a>
+      <a class="nav-item nav-link" routerLink="/app-pipes" routerLinkActive="active">Pipes</a>
+      <a class="nav-item nav-link" routerLink="/" routerLinkActive="active">About</a>
+
     </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="nav-item nav-link " routerLink="/login" [hidden]="!hideLogout()" routerLinkActive="active">Login</a>
+      </li>
+      <li>
+        <a class="nav-item nav-link " routerLink="/login" [hidden]="hideLogout()" (click)="logout()">Log out</a>
+      </li>
+    </ul>
+  </div>
 </nav>
