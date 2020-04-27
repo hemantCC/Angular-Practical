@@ -21,14 +21,17 @@ import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
 import { FlyingHeroesImpurePipe } from 'src/app/pipes/flying-heroes-impure.pipe';
 import { FlyingHeroImpureComponent } from './components/pipes/flying-hero-impure/flying-hero-impure.component';
+import { LoginComponent } from './components/account/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
 
 const appRoutes : Routes = [
-  { path: '' , component: ShoppingCartComponent},
-  { path: 'app-pipes' , component: PipesComponent},
-  { path: 'directive-example' , component: DirectiveExampleComponent}
+  { path: 'shopping-cart' , canActivate:[AuthGuard], component: ShoppingCartComponent},
+  { path: 'app-pipes' , canActivate:[AuthGuard], component: PipesComponent},
+  { path: 'directive-example' , canActivate:[AuthGuard], component: DirectiveExampleComponent},
+  { path:  'login' , component: LoginComponent}
 
 ];
 
@@ -50,6 +53,7 @@ const appRoutes : Routes = [
     FlyingHeroesPipe,
     FlyingHeroesImpurePipe,
     FlyingHeroImpureComponent,
+    LoginComponent,
     
   ],
   imports: [
@@ -62,7 +66,7 @@ const appRoutes : Routes = [
     
 
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 

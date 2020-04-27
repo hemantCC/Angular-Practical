@@ -27,7 +27,7 @@ export class DirectiveExampleComponent implements OnInit {
 
 
   getServerStatus() {
-    return this.serverStatus = Math.random() > 0.5 ? 'Online' : 'Offline';
+    return this.serverStatus ='Offline';
   }
 
   getColor() {
